@@ -4,6 +4,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #define GRN   "\x1B[32;1m"      //light green
+#define RESET "\x1B[0m"         //back to the default color
 
 int my_strcmp(const char *s1, const char *s2) {
     const unsigned char *p1 = (const unsigned char *)s1;
@@ -137,7 +138,7 @@ int main(int argc, char **argv){
     if (status == 0) {
         sort_files(files, count, by_time);                  // alphabetical, or by mtime with -t
         for (int i = 0; i < count; i++)
-            printf(GRN "%s\n", files[i].name) ;                  // one name per line in green
+            printf(GRN "%s" RESET "\n", files[i].name);                  // one name per line in green
     }
 
     // ---- 5. Single cleanup, used by both the success and error paths ----
