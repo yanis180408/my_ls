@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <dirent.h>
 #include <sys/stat.h>
 #define GRN   "\x1B[32;1m"      //light green
